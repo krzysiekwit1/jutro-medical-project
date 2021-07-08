@@ -25,15 +25,14 @@ function Continents() {
   }, [error])
 
   return (
-    <div className='grid grid-cols-4 gap-1.5 m-8 duration-1000 '>
+    <div className='flex flex-wrap m-8 duration-1000 '>
       <Link to='/' className='absolute insest-x-0 inset-y-1'>
         <div className='text-red-500 font-bold'>BACK</div>
       </Link>
-
       {continents.map((continent: Continent) => (
         <Link to={`/continents:${continent.code}`}>
           <div
-            className='h-32 bg-blue-400 rounded-lg hover:bg-purple-700'
+            className='w-64 h-32 bg-blue-400 mr-6 mt-4 rounded-lg hover:bg-purple-700'
             key={continent.code}
           >
             <p className='pt-4 text-2xl pl-4'>{continent.name}</p>

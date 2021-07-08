@@ -8,6 +8,7 @@ import {
   from,
 } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
+
 import Home from './components/Home/Home'
 import Continents from './components/Continents/Continents'
 import Countries from './components/Countries/Countries'
@@ -15,9 +16,7 @@ import './App.css'
 
 const errorLink = onError(({ graphQLErrors }) => {
   if (graphQLErrors) {
-    graphQLErrors.map(({ message }) => {
-      alert(`Graphql error ${message}`)
-    })
+    graphQLErrors.map(({ message }) => alert(`Graphql error ${message}`))
   }
 })
 
