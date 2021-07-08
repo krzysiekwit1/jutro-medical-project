@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { useParams } from 'react-router-dom'
-import { LOAD_COUNTRIES } from '../../GraphQL/Queries'
 import { Link } from 'react-router-dom'
+import { LOAD_COUNTRIES } from '../../GraphQL/Queries'
 
 type Language = {
   code: string
@@ -21,7 +21,6 @@ function Countries() {
 
   useEffect(() => {
     if (data) {
-      console.log(data.continent.countries)
       setCountries(data.continent.countries)
     }
   }, [data])

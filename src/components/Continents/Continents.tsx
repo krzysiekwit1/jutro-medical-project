@@ -14,7 +14,6 @@ function Continents() {
   const [continents, setContinents] = useState<any[]>([])
 
   useEffect(() => {
-    console.log(data)
     if (data) {
       setContinents(data.continents)
     }
