@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useQuery } from '@apollo/client'
 import { useParams } from 'react-router-dom'
 import { LOAD_COUNTRIES } from '../../GraphQL/Queries'
+import { Link } from 'react-router-dom'
+
 type Language = {
   code: string
   name: string
@@ -30,6 +32,9 @@ function Countries() {
 
   return (
     <div className='grid grid-cols-3 gap-5 m-8 duration-1000'>
+      <Link to='/continents' className='absolute insest-x-0 inset-y-1'>
+        <div className='text-red-500 font-bold'>BACK</div>
+      </Link>
       {countries.map((country) => (
         <div
           className='h-48 bg-blue-400 rounded-lg hover:bg-purple-700'
@@ -44,7 +49,7 @@ function Countries() {
             />
           </div>
           <p className='pl-4 text-xl'>languages:</p>
-          <div className='pl-4 pt-2 flex'>
+          <div className='pl-4 pt-2 flex flex-wrap'>
             {country.languages.map((language: Language) => (
               <p className='pr-4' key={language.code}>
                 {language.name}

@@ -26,6 +26,10 @@ function Continents() {
 
   return (
     <div className='grid grid-cols-4 gap-1.5 m-8 duration-1000 '>
+      <Link to='/' className='absolute insest-x-0 inset-y-1'>
+        <div className='text-red-500 font-bold'>BACK</div>
+      </Link>
+
       {continents.map((continent: Continent) => (
         <Link to={`/continents:${continent.code}`}>
           <div
