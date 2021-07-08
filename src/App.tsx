@@ -10,6 +10,7 @@ import {
 import { onError } from '@apollo/client/link/error'
 import Home from './components/Home/Home'
 import Continents from './components/Continents/Continents'
+import Countries from './components/Countries/Countries'
 import './App.css'
 
 const errorLink = onError(({ graphQLErrors }) => {
@@ -41,6 +42,7 @@ function App() {
           <Route exact path='/continents'>
             <Continents />
           </Route>
+          <Route exact path='/continents:code' children={<Countries />} />
         </Switch>
       </Router>
     </ApolloProvider>
