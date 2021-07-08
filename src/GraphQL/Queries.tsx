@@ -8,3 +8,21 @@ export const LOAD_CONTINENTS = gql`
     }
   }
 `
+export const LOAD_COUNTRIES = gql`
+  query ladCountriesQuery($code: ID!) {
+    continent(code: $code) {
+      code
+      name
+      countries {
+        code
+        name
+        emoji
+        emojiU
+        languages {
+          code
+          name
+        }
+      }
+    }
+  }
+`
